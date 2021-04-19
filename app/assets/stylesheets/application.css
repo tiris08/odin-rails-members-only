@@ -13,3 +13,88 @@
  *= require_tree .
  *= require_self
  */
+
+ /* body */
+ body *{
+  font-family: 'Times New Roman', Times, serif;
+ }
+ 
+ /* Navbar */
+
+ .navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+ }
+
+ .navbar-all-items {
+  float: left;
+ }
+
+ .navbar-item {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+ }
+
+ .navbar-item:hover {
+  background-color: #111;
+ }
+ 
+ /* post list */
+
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+ }
+
+ a:hover {
+  background-color: rgb(226, 226, 226);
+ }
+
+ a {
+  text-decoration: none;
+  color: black;
+  border: 10rem black;
+ }
+
+ /* forms */
+
+ .input {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+   background-color: #f8f8f8;
+ }
+
+ .btn-submit {
+  border: none;
+  background-color: #333;
+  color: white;
+  padding: 14px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+ }
+
+ .btn-submit:hover {
+  background-color: #111;
+ }
+
+ textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
