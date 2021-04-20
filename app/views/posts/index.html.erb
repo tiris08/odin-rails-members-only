@@ -1,9 +1,14 @@
-<h1> here are all Posts </h1>
 
-<ul>
-<% @posts.each do |post| %>
-  <li>
-    <%= link_to "#{post.title}", post_path(post) %>
-  </li>
-<% end %>
-</ul>
+<div class="flex-conteiner">
+  <div class="flex-side"> 
+    <h2>#profile</h2>
+    <h2 class="flex-item-left">#taras08, Ivanyuk Taras, 12/9/2020</h2>
+    <h2 class="flex-item-left">#taras08, Ivanyuk Taras, 12/9/2020</h2>
+  </div>
+  <div class="flex-main">
+    <h2>#trends</h2>
+    <% @posts.each do |post| %>
+        <h2 class="flex-item-right"><%= link_to "#{post.title}", post_path(post), class: "flex-item" %></h2>
+    <% end %>
+  </div>
+</div>

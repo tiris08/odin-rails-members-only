@@ -17,7 +17,20 @@
  /* body */
  body *{
   font-family: 'Times New Roman', Times, serif;
+  color: #333;
+  margin: 0;
  }
+
+ h1 {
+  text-align: center;
+  padding: 14px;
+ }
+
+ h2 {
+   padding: 14px;
+   background-color: azure;
+ }
+ 
  
  /* Navbar */
 
@@ -45,22 +58,15 @@
   background-color: #111;
  }
  
- /* post list */
-
- ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
- }
+ /* posts links */
 
  a:hover {
-  background-color: rgb(226, 226, 226);
+  background-color: azure;
  }
 
  a {
   text-decoration: none;
-  color: black;
-  border: 10rem black;
+  text-align: center;
  }
 
  /* forms */
@@ -97,4 +103,54 @@
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
+}
+
+
+/* body index flex-conteiners */
+
+
+
+.flex-main {
+  flex: 70%;
+}
+.flex-side {
+  flex: 30%;
+}
+.flex-conteiner {
+  display: flex;
+}
+.flex-item-left {
+  background-color:  azure;
+  font-size: 16px;
+  padding: 18.5px;
+}
+.flex-item-right {
+  background-color: rgb(255, 255, 255);
+  padding: 0;
+}
+
+.flex-item {
+  display: block;
+  padding: 14px;
+}
+
+
+/* body show buttons */
+
+
+.btn_control {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 14px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn_control:hover {
+  background-color: rgb(201, 108, 108);
+}
+.btn-div {
+  padding-top: 90px;
 }

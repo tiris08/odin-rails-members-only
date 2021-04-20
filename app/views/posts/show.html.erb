@@ -1,2 +1,7 @@
 <h1><%= @post.title %> </h1>
 <p><%= @post.body %> </p>
+<p style="text-align: right;font-style: italic;">Written by #taras08, Ivanyuk Taras, 12/9/2020</p><br>
+<div class="btn-div">
+  <%= link_to "Delete", post_path(@post), class: "btn_control", method: :delete, data: { confirm: "Are you sure?" }%>
+  <%= link_to "Edit", edit_post_path(@post), class: "btn_control" %>
+</div>
