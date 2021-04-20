@@ -66,7 +66,6 @@
 
  a {
   text-decoration: none;
-  text-align: center;
  }
 
  /* forms */
@@ -153,4 +152,12 @@
 }
 .btn-div {
   padding-top: 90px;
+}
+
+.notification {
+  padding: 10px;
+  font-size: 20px;
+  background-color: rgb(223, 255, 192);
+  color: rgb(40, 85, 40);
+  text-align: center;
 }
