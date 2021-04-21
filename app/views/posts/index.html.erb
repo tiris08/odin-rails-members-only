@@ -1,14 +1,17 @@
 
-<div class="flex-conteiner">
-  <div class="flex-side"> 
-    <h2>#profile</h2>
-    <h2 class="flex-item-left">#taras08, Ivanyuk Taras, 12/9/2020</h2>
-    <h2 class="flex-item-left">#taras08, Ivanyuk Taras, 12/9/2020</h2>
-  </div>
-  <div class="flex-main">
+
     <h2>#trends</h2>
     <% @posts.each do |post| %>
+    <div class="flex-conteiner">
+      <div class="flex-main">
         <h2 class="flex-item-right"><%= link_to "#{post.title}", post_path(post), class: "flex-item" %></h2>
+      </div>
+      <div class="flex-side">
+      <% if user_signed_in? %>
+        <h2><%= "written by '#{post.user.name}'" %></h2>
+      <% else %>
+        <h2>Anonymous author</h2>
+      <% end %>
+      </div>  
+    </div>
     <% end %>
-  </div>
-</div>

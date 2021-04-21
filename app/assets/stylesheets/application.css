@@ -111,27 +111,25 @@
 
 .flex-main {
   flex: 70%;
+  text-align: justify;
 }
 .flex-side {
   flex: 30%;
 }
 .flex-conteiner {
   display: flex;
+  text-align:start;
 }
-.flex-item-left {
-  background-color:  azure;
-  font-size: 16px;
-  padding: 18.5px;
-}
+
 .flex-item-right {
   background-color: rgb(255, 255, 255);
   padding: 0;
 }
 
-.flex-item {
-  display: block;
-  padding: 14px;
-}
+ .flex-item {
+
+  padding:0;
+ }
 
 
 /* body show buttons */
