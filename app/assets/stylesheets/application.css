@@ -161,3 +161,8 @@
   color: rgb(40, 85, 40);
   text-align: center;
 }
+
+
+.box {
+  display: block;
+}
