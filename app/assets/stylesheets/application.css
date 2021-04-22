@@ -111,14 +111,12 @@
 
 .flex-main {
   flex: 70%;
-  text-align: justify;
 }
 .flex-side {
   flex: 30%;
 }
 .flex-conteiner {
   display: flex;
-  text-align:start;
 }
 
 .flex-item-right {

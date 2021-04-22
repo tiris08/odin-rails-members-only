@@ -4,7 +4,7 @@
     <% @posts.each do |post| %>
     <div class="flex-conteiner">
       <div class="flex-main">
-        <h2 class="flex-item-right"><%= link_to "#{post.title}", post_path(post), class: "flex-item" %></h2>
+       <%= link_to "#{post.title}", post_path(post),  class: "btn_control" %>
       </div>
       <div class="flex-side">
       <% if user_signed_in? %>
