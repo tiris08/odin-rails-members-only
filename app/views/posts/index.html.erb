@@ -1,17 +1,26 @@
-
-
-    <h2>#trends</h2>
+<div class="row">
+  <div class="leftcolumn">
     <% @posts.each do |post| %>
-    <div class="flex-conteiner">
-      <div class="flex-main">
-       <%= link_to "#{post.title}", post_path(post),  class: "btn_control" %>
+      <div class="card">
+        <h2><%= post.title %> </h2><br>
+        <% if user_signed_in? %>
+          <h5><%= "written by #{post.user.name} ##{post.user.username} on #{post.created_at.strftime("%b %d, %Y")}" %></h5>
+        <% else %>
+          <h5><%= "written on #{post.created_at.strftime("%b %d, %Y")}"%> 
+          <%=link_to "Log In", new_user_session_path, class: "btn-log" %> to see the author details</h5>
+        <% end %>
+        <p><%= truncate("#{post.body}", length: 500) %>
+        </p>
+        <%= link_to "Read more", post_path(post), class: "btn-control" %>
       </div>
-      <div class="flex-side">
-      <% if user_signed_in? %>
-        <h2><%= "written by '#{post.user.name}'" %></h2>
-      <% else %>
-        <h2>Anonymous author</h2>
-      <% end %>
-      </div>  
-    </div>
     <% end %>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h3>Popular Posts</h3>
+        <div class="fakeimg"><p>Image</p></div>
+        <div class="fakeimg"><p>Image</p></div>
+        <div class="fakeimg"><p>Image</p></div>
+    </div>
+  </div>
+</div>

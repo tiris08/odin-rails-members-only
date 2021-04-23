@@ -1,14 +1,16 @@
+<div class="card">
 <h1><%= @post.title %> </h1>
 <p><%= @post.body %> </p>
 
 <% if user_signed_in? %>
 <p style="text-align: right;font-style: italic;"><%= "Written by ##{@post.user.username}, 
-#{@post.user.name} at #{@post.created_at.strftime("%b %d, %Y")}"%></p><br>
+#{@post.user.name} on #{@post.created_at.strftime("%b %d, %Y")}"%></p><br>
 <% if current_user.id == @post.user_id%>
-<div class="btn-div">
-  <%= link_to "Delete", post_path(@post), class: "btn_control", method: :delete, 
+<div>
+  <%= link_to "Delete", post_path(@post), class: "btn-control", method: :delete, 
                                           data: { confirm: "Are you sure?" }%>
-  <%= link_to "Edit", edit_post_path(@post), class: "btn_control" %>
+  <%= link_to "Edit", edit_post_path(@post), class: "btn-control" %>
 </div>
 <% end %>
 <% end %>
+</div>

@@ -15,150 +15,206 @@
  */
 
  /* body */
- body *{
-  font-family: 'Times New Roman', Times, serif;
-  color: #333;
-  margin: 0;
- }
-
- h1 {
-  text-align: center;
-  padding: 14px;
- }
-
- h2 {
-   padding: 14px;
-   background-color: azure;
- }
- 
- 
- /* Navbar */
-
- .navbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
- }
-
- .navbar-all-items {
-  float: left;
- }
-
- .navbar-item {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
- }
-
- .navbar-item:hover {
-  background-color: #111;
- }
- 
- /* posts links */
-
- a:hover {
-  background-color: azure;
- }
-
- a {
-  text-decoration: none;
- }
-
- /* forms */
-
- .input {
-   width: 100%;
-   padding: 12px 20px;
-   margin: 8px 0;
-   border: 2px solid #ccc;
-   border-radius: 4px;
-   box-sizing: border-box;
-   background-color: #f8f8f8;
- }
-
- .btn-submit {
-  border: none;
-  background-color: #333;
-  color: white;
-  padding: 14px 16px;
-  font-size: 16px;
-  text-decoration: none;
-  cursor: pointer;
- }
-
- .btn-submit:hover {
-  background-color: #111;
- }
-
- textarea {
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
+ * {
   box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
 }
 
-
-/* body index flex-conteiners */
-
-
-
-.flex-main {
-  flex: 70%;
-}
-.flex-side {
-  flex: 30%;
-}
-.flex-conteiner {
-  display: flex;
-}
-
-.flex-item-right {
-  background-color: rgb(255, 255, 255);
-  padding: 0;
-}
-
- .flex-item {
-
-  padding:0;
- }
-
-
-/* body show buttons */
-
-
-.btn_control {
-  background-color: #333;
-  border: none;
-  color: white;
-  padding: 14px 16px;
-  font-size: 16px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.btn_control:hover {
-  background-color: rgb(201, 108, 108);
-}
-.btn-div {
-  padding-top: 90px;
-}
-
-.notification {
+body {
+  font-family: Arial;
   padding: 10px;
-  font-size: 20px;
-  background-color: rgb(223, 255, 192);
-  color: rgb(40, 85, 40);
+  background: rgb(234, 245, 244);
+  
+}
+
+/* Header/Blog Title */
+
+.header {
+  border-radius: 4px;
+  padding: 1px;
+  text-align: center;
+  background-image: url(/assets/1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: rgb(51, 51, 51);
+}
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: rgb(234, 245, 244);
+  color: black;
+}
+/* style posts feed */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+.fakeimg {
+  background-color: rgb(234, 245, 244);
+  width: 100%;
+  padding: 20px;
+}
+/* Add a card effect for articles */
+.card {
+  border-radius: 4px;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.card h2 {
+  margin-bottom: 0%;
+}
+
+.card h5 {
+  margin-top: 0%;
+}
+
+/* buttons */
+
+.btn-log {
+  font-size: 15px;
+  color: #001f9d;
   text-align: center;
 }
-
-
-.box {
-  display: block;
+.btn-control {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: rgb(234, 245, 244);
+  border-radius: 4px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
+.btn-control:hover {
+  background-color:rgb(51, 51, 51);
+  color: white;
+}
+
+/* forms */
+input[type=submit] {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  width: 100%;
+  background-color: rgb(234, 245, 244);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type=submit]:hover {
+  background-color:rgb(51, 51, 51);
+  color: white;
+}
+
+input[type=text], [type=email], [type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.form {
+  margin:auto;
+  width: 50%;
+  /* border-radius: 5px;
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+
+.form-post {
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.notice {
+  border: 1px solid rgba(36, 241, 6, 0.46);
+    background-color: rgba(7, 149, 66, 0.12156862745098039);
+    color: #0ad406;
+    text-align: center;
+    padding: 5px;
+}
+.alert {
+  border: 1px solid rgba(241, 6, 6, 0.81);
+  background-color: rgba(220, 17, 1, 0.16);
+  color: #ff0303;
+  text-align: center;
+  padding: 5px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+  .header h1 {
+    font-size: 25px;
+  }
+}
+
+

@@ -3,20 +3,16 @@
 </div>
 
 <% if user_signed_in? %>
-    <ul class="navbar">
-      <li class="navbar-all-items"><%= link_to "Home", root_path, class: "navbar-item" %></li>
-      <li class="navbar-all-items"><%= link_to "New Post", new_post_path, class: "navbar-item" %></li>
-      <li class="navbar-all-items" style="float:right"><%= link_to current_user.name, 
-      edit_user_registration_path, class: "navbar-item" %></li>
-     <li class="navbar-all-items" style="float:right"><%= link_to "Log Out", 
-     destroy_user_session_path, method: :delete, class: "navbar-item" %></li>
-    </ul>
+    <div class="topnav">
+      <%= link_to "Home", root_path %>
+      <%= link_to "New Post", new_post_path%>
+      <%= link_to current_user.name, edit_user_registration_path, style: "float:right; background-color: #36645c" %>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete, style: "float:right" %>
+    </div>
 <% else %>
-    <ul class="navbar">
-      <li class="navbar-all-items"><%= link_to "Home", root_path, class: "navbar-item" %></li>
-      <li class="navbar-all-items" style="float:right"><%= link_to "Log In", new_user_session_path, 
-      class: "navbar-item" %></li>
-     <li class="navbar-all-items" style="float:right"><%= link_to "Sign Up", new_user_registration_path, 
-     class: "navbar-item" %></li>
-    </ul>
+    <div class="topnav">
+     <%= link_to "Home", root_path %>
+     <%= link_to "Log In", new_user_session_path, style: "float:right" %>
+     <%= link_to "Sign Up", new_user_registration_path, style: "float:right" %>
+    </div>
 <% end %>
