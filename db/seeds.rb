@@ -32,10 +32,10 @@ end
 posts = Post.all
 users = User.all
 posts = posts[10..40]
-posts.each { |post| post.like(users)[44] }
+posts.each { |post| post.like(users[44] }
 posts = posts[30..40]
 posts.each { |post| post.like(users[33]) }
+posts = posts[40..50]
 5.times do |n|
-  posts = posts[40..50]
   posts.each { |post| post.like(users[n+1]) }
 end
