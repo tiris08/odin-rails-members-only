@@ -6,7 +6,7 @@ class Post < ApplicationRecord
                     length: {minimum: 3}
                 
   
-  
+  scope :popular_posts, -> {includes(:likes).group('post_id').order('COUNT(post_id) DESC').references(:likes)}
   
   
   

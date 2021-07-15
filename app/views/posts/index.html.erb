@@ -4,7 +4,8 @@
       <div class="card">
         <h2><%= post.title %> </h2><br>
         <% if user_signed_in? %>
-          <h5><%= "written by #{post.user.name} ##{post.user.username} on #{post.created_at.strftime("%b %d, %Y")}" %></h5>
+          <h5><%= pluralize(post.likes.count, "like") %> |
+          <%= "written by #{post.user.name} ##{post.user.username} on #{post.created_at.strftime("%b %d, %Y")}" %></h5>
         <% else %>
           <h5><%= "written on #{post.created_at.strftime("%b %d, %Y")}"%> 
           <%=link_to "Log In", new_user_session_path, class: "btn-log" %> to see the author details</h5>
@@ -18,7 +19,7 @@
   <div class="rightcolumn">
     <div class="card">
       <h3>Popular Posts <%= %></h3>
-      <% @posts.limit(5).each do |post| %>
+      <% @posts.popular_posts.limit(5).each do |post| %>
         <div class="fakeimg"><%= link_to post.title, post_path(post), class: "btn-control" %></div>
       <% end %>
     </div>
