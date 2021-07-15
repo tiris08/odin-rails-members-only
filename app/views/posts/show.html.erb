@@ -1,15 +1,22 @@
 <div class="card">
-<h1><%= @post.title %> </h1>
+<h1><%= @post.title %></h1>
 <p><%= @post.body %> </p>
 
 <% if user_signed_in? %>
-<p style="text-align: right;font-style: italic;"><%= "Written by ##{@post.user.username}, 
-#{@post.user.name} on #{@post.created_at.strftime("%b %d, %Y")}"%></p><br>
-<% if current_user.id == @post.user_id%>
+<p class="post-info">
+<% if !@post.liked?(current_user) %>
+  <%= link_to "like", like_post_path(@post), id: "btn-like" %>
+  <% else %>
+  <%= link_to "liked", like_post_path(@post), id: "btn-like" %>
+  <% end %>
+| <%= pluralize(@post.likes.count, "like") %> |
+<%= "Written by ##{@post.user.username}, 
+#{@post.user.name} on #{@post.created_at.strftime("%b %d, %Y")}"%> </p><br>
 <div>
-  <%= link_to "Delete", post_path(@post), class: "btn-control", method: :delete, 
-                                          data: { confirm: "Are you sure?" }%>
-  <%= link_to "Edit", edit_post_path(@post), class: "btn-control" %>
+  <% if current_user.id == @post.user_id%>
+    <%= link_to "Delete", post_path(@post), class: "btn-control", method: :delete, 
+                                            data: { confirm: "Are you sure?" }%>
+    <%= link_to "Edit", edit_post_path(@post), class: "btn-control" %>
 </div>
 <% end %>
 <% end %>
