@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_post, only: [:show, :destroy, :edit, :update, :like]
   def index
-    @posts = Post.all
+     @posts = Post.paginate(page: params[:page], per_page: 20).order('created_at DESC')
   end
   
   def show
