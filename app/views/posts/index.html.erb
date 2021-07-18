@@ -1,17 +1,19 @@
 <div class="row">
   <div class="leftcolumn">
-    <% @posts.includes(:user).each do |post| %>
+    <% @posts.includes(:user, :likes).each do |post| %>
       <div class="card">
         <h2><%= post.title %> </h2><br>
         <% if user_signed_in? %>
-          <h5><%= pluralize(post.likes.count, "like") %> |
-          <%= "written by #{post.user.name} ##{post.user.username} on #{post.created_at.strftime("%b %d, %Y")}" %></h5>
+          <h5><%= pluralize(post.likes.size, "like") %> |
+            <%= "written by #{post.user.name} ##{post.user.username} 
+            on #{post.created_at.strftime("%b %d, %Y")}" %></h5>
         <% else %>
           <h5><%= "written on #{post.created_at.strftime("%b %d, %Y")}"%> 
-          <%=link_to "Log In", new_user_session_path, class: "btn-log" %> to see the author details</h5>
+            <%=link_to "Log In", new_user_session_path, class: "btn-log" %> 
+            to see the author details
+          </h5>
         <% end %>
-        <p><%= truncate("#{post.body}", length: 500) %>
-        </p>
+        <p><%= truncate("#{post.body}", length: 500) %></p>
         <%= link_to "Read more", post_path(post), class: "btn-control" %>
       </div>
     <% end %>
@@ -22,8 +24,9 @@
   <div class="rightcolumn">
     <div class="card">
       <h3>Popular Posts <%= %></h3>
-      <% @posts.each do |post| %>
-        <div class="fakeimg"><%= link_to post.title, post_path(post), class: "btn-control" %></div>
+      <% @popular_posts.each do |post| %>
+        <div class="fakeimg">
+          <%= link_to post.title, post_path(post), class: "btn-control" %></div>
       <% end %>
     </div>
   </div>
