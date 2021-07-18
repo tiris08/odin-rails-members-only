@@ -1,0 +1,5 @@
+<%= form_with model: [@post, @post.comments.build] do |f| %>
+  <%= f.text_field(:content) %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit %>
+<% end %>
