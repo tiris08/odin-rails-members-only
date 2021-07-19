@@ -9,11 +9,6 @@ class Post < ApplicationRecord
                 
   scope :popular_posts, -> {includes(:likes).group('post_id').order('COUNT(post_id) DESC').references(:likes)}
   
-  
-  def add_commentator(user)
-    commentators << user
-  end
-
   def liked?(user)
     likes_by.include?(user)
   end
