@@ -2,5 +2,6 @@
   <h5><%= comment.user.name %> </h5>
   <p><%= comment.content %> </p>
   <p class="time"><%= comment.created_at.strftime("%b %d, %Y") %></p>
-
-  <%= link_to 'Delete', [comment.post, comment], method: :delete %>
+  <% if current_user.id == comment.user_id %>
+    <%= link_to 'Delete', [comment.post, comment], method: :delete %>
+  <% end %>

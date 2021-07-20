@@ -3,7 +3,6 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :likes_by, through: :likes, source: :user
   has_many :comments, dependent: :destroy
-  has_many :commentators, through: :comments, source: :user
   validates :title, presence: true,
                     length: {minimum: 3}
                 

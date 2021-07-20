@@ -20,7 +20,8 @@
   </div>
   <% end %>
   <div class="comments">
-    <%= render @post.comments.includes(:user) %>
+    <%= render @comments %>
+    <%= will_paginate @comments%>
   <div>
   <div class="comment_form">
     <%= render "comments/form" %>
