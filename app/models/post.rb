@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   validates :title, presence: true,
                     length: {minimum: 3}
                 
-  scope :popular_posts, -> {includes(:likes).group('post_id').order('COUNT(post_id) DESC').references(:likes)}
+  scope :popular_posts, -> {includes(:likes).group('id').order('COUNT(post_id) DESC').references(:likes)}
   
   def liked?(user)
     likes_by.include?(user)
