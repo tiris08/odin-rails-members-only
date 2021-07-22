@@ -1,3 +1,31 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.index_pagination {
+  margin-top: 2px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 5px;
+  cursor: default; }
+.index_pagination a, .index_pagination span {
+  padding: 0.2em 0.3em; }
+.index_pagination .disabled {
+  color: #aaaaaa; }
+.index_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: rgb(200, 241, 238);
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+.index_pagination a {
+  text-decoration: none;
+  color: black; }
+.index_pagination a:hover, .index_pagination a:focus {
+  text-decoration: underline; }

@@ -19,10 +19,15 @@
       <%= link_to "Edit", edit_post_path(@post), class: "btn-control" %>
   </div>
   <% end %>
+  <br>
   <div class="comments">
     <%= render @comments %>
-    <%= will_paginate @comments%>
-  <div>
+    <% if @post.comments.size > 10 %>
+      <div class="comment_pagination">
+        <%= will_paginate @comments, :container => false %>
+      </div>
+    <% end %>
+  </div>
   <div class="comment_form">
     <%= render "comments/form" %>
   </div>

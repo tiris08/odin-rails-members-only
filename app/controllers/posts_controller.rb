@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
   
   def show
+    @comment = @post.comments.build
     @comments = @post.comments.includes(:user).paginate(page: params[:page], 
                                                         per_page: 10).order('created_at DESC')
   end
