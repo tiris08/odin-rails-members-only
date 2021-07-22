@@ -7,38 +7,38 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 # users
-# 50.times do |n|
-#   name = Faker::Name.name 
-#   username =  "#{Faker::Internet.username}" + "#{n+1}"
-#   email = Faker::Internet.email(name:  name, separators: '.')
-#   user = User.new(name: name, 
-#              username: username,
-#              email: email,
-#              password: "123456",
-#              password_confirmation: "123456")
-#   user.skip_confirmation!
-#   user.save!
-# end
+50.times do |n|
+  name = Faker::Name.name 
+  username =  "#{Faker::Internet.username}" + "#{n+1}"
+  email = Faker::Internet.email(name:  name, separators: '.')
+  user = User.new(name: name, 
+             username: username,
+             email: email,
+             password: "123456",
+             password_confirmation: "123456")
+  user.skip_confirmation!
+  user.save!
+end
 
-# users = User.first(10)
-# # posts
-# 5.times do
-#   body = Faker::Lorem.sentence(word_count: 150)
-#   title = Faker::Lorem.sentence(word_count: 5)
-#   users.each { |u| u.posts.create!(title: title, body: body)}
-# end
-# # likes
+users = User.first(10)
+# posts
+5.times do
+  body = Faker::Lorem.sentence(word_count: 150)
+  title = Faker::Lorem.sentence(word_count: 5)
+  users.each { |u| u.posts.create!(title: title, body: body)}
+end
+# likes
 
 posts = Post.all
 users = User.all
-# posts = posts[10..40]
-# posts.each { |post| post.like(users[44]) }
-# posts = posts[30..40]
-# posts.each { |post| post.like(users[33]) }
-# posts = posts[40..50]
-# 5.times do |n|
-#   posts.each { |post| post.like(users[n+1]) }
-# end
+posts = posts[10..40]
+posts.each { |post| post.like(users[44]) }
+posts = posts[30..40]
+posts.each { |post| post.like(users[33]) }
+posts = posts[40..50]
+5.times do |n|
+  posts.each { |post| post.like(users[n+1]) }
+end
 
 40.times do |n|
 comment = Faker::Lorem.sentence(word_count: 2, random_words_to_add: 4)
