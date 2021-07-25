@@ -5,9 +5,9 @@
 <% if user_signed_in? %>
   <p class="post-info">
   <% if !@post.liked?(current_user) %>
-    <%= link_to "like", like_post_path(@post), id: "btn-like" %>
+    <%= link_to "like", like_post_path(@post), class: "btn-like" %>
     <% else %>
-    <%= link_to "liked", like_post_path(@post), id: "btn-like" %>
+    <%= link_to "liked", like_post_path(@post), class: "btn-like" %>
     <% end %>
   | <%= pluralize(@post.likes.count, "like") %> |
   <%= "Written by ##{@post.user.username}, 

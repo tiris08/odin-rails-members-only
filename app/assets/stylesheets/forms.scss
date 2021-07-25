@@ -1,0 +1,19 @@
+// forms
+.form{
+  margin:auto;
+  width: 50%;
+}
+
+.form-post {
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 100%;
+  }
+}

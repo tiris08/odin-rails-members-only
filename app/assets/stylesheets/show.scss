@@ -1,0 +1,23 @@
+// post itself
+.post-info {
+  text-align: right;
+  font-style: italic;
+}
+// like button
+.btn-like {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: #36645c;
+  border-radius: 4px;
+  color: white;
+  padding: 7px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-style: normal;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 5px;
+  &:hover {
+    background-color:rgb(51, 51, 51);
+    color: white;
+  }
+}

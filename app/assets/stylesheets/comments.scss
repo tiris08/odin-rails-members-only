@@ -1,6 +1,3 @@
-// Place all the styles related to the Comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 
 .comments {
   padding-left: 5px;
@@ -16,7 +13,7 @@
     color: rgb(99, 99, 96);
   }
 }
-
+// comments pagination
 .comment_pagination {
   margin-top: 2px;
   background: #ffffff;
@@ -45,12 +42,13 @@
 .comment_pagination a:hover, .comment_pagination a:focus {
   text-decoration: underline; }
 
+// delete button
 .btn-dl {
   text-decoration: none;
   color: gray;
   font-weight: 700;
 }
-
+// line between comments to differ them
 hr {
   border: 1px dotted rgb(206, 206, 206);
   border-bottom: none;
