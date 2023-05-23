@@ -3,10 +3,11 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :likes_by, through: :likes, source: :user
   has_many :comments, dependent: :destroy
+
   validates :title, presence: true,
-                    length: {minimum: 3}
-                
-  scope :popular_posts, -> {joins(:likes).group('id').order('COUNT(post_id) DESC')}
+                    length: { minimum: 3 }
+
+  scope :popular_posts, -> { joins(:likes).group('id').order('COUNT(post_id) DESC') }
   
   def liked?(user)
     likes_by.include?(user)

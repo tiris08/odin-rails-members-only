@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_post, only: [:show, :destroy, :edit, :update, :like]
+
   def index
      @posts = Post.paginate(page: params[:page], per_page: 10).order('created_at DESC')
      @popular_posts = Post.popular_posts.limit(25)
@@ -32,8 +33,7 @@ class PostsController < ApplicationController
     redirect_to root_path, notice: "Your post was successfully deleted!"
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @post.update(post_params)
@@ -54,6 +54,7 @@ class PostsController < ApplicationController
   end
 
   private
+
     def post_params
       params.require(:post).permit(:title, :body)
     end
